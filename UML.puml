@@ -1,0 +1,43 @@
+
+@startuml
+
+title Class Diagram
+
+
+class user {
+    +ID:String
+    +Username:String
+    +FirstName:string
+    +LastName:string
+    -Password_hash:hash
+    +Gender:string
+    +authenticate()
+}
+
+class task {
+    +ID
+    +Summary
+    +User
+    +Due date
+    +Priority
+    +Progress
+    +Is it Done or not
+    +Create()
+    +Print()
+    +Save()
+    +Load from file()
+    +task_dict()
+}
+
+class task_manager {
+    +tasks_list()
+    +writ_tasks()
+    +load_tasks()
+    +get_by_id()
+    +sorted_tasks()
+}
+
+task "[0..*]" ---down* "[1..1]" task_manager
+user "[1..1]" --- "[0..*]" task
+
+@enduml
