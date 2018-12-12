@@ -7,5 +7,5 @@ if __name__ == '__main__':
     assert u.password != password, 'Password not hashed!'
     assert u.authenticate(password), 'Authentication failed'
     assert not u.authenticate('dummy' + password), 'Authentication should fail with wrong password!'
-    print(u.fullname())
-    print(u.user_id)
+    assert u.fullname() == 'Mr. ali behboudi', 'Wrong fullname'
+    assert u.user_id == 1, 'Uncorrected user_id '
