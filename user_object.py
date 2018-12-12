@@ -1,5 +1,4 @@
 import hashlib
-import datetime
 
 
 class User:
