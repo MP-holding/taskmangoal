@@ -1,4 +1,4 @@
-from User_object import User
+from user_object import User
 
 if __name__ == '__main__':
     user_name = 'asghar'
