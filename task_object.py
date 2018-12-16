@@ -36,7 +36,7 @@ class Task:
     #     with open(str(self.id), 'r') as handle:
     #         return pickle.load(handle)
 
-    def load_tasks(self):
+    def read_tasks(self):
         if os.path.isfile('tasks.csv'):
             with open('tasks.csv', newline='') as csvfile:
                 reader = csv.DictReader(csvfile)
@@ -55,7 +55,7 @@ class Task:
 
     def writ_tasks(self):
         with open('tasks.csv', 'w', newline='') as csvfile:
-            fieldnames = ['id', 'user_name', 'task_summery', 'task_date', 'duration']
+            fieldnames = [key for key in self.__dict__.keys()]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for task in self.tasks_list:
